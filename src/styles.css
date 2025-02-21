@@ -1,0 +1,56 @@
+* {
+  border: 0.5px dotted rgba(255, 0, 0, 0.75);
+}
+
+@media screen and (min-width: 320px) {
+  #main {
+    margin: 5px 10px;
+  }
+
+  #carousel-center-title {
+    text-align: center;
+  }
+  #project-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-center {
+    width: 55vw;
+    height: 55vw;
+    background-color: blue;
+    flex-shrink: 0;
+    z-index: 2;
+  }
+
+  .carousel-left, .carousel-right {
+    width: 45vw;
+    height: 45vw;
+    background-color: rgba(0, 0, 255, 0.5);
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .carousel-left {
+    left: 90px;
+  }
+
+  .carousel-right {
+    left: -90px;
+  }
+
+  #carousel-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .carousel-left-btn::before {
+    content: "←";
+  }
+
+  .carousel-right-btn::after {
+    content: "→"
+  }
+  
+}
