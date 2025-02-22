@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "project-homepage",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,7 +20,16 @@
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-zhuye/project-homepage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/d-zhuye/project-homepage/issues"
+  },
+  "homepage": "https://github.com/d-zhuye/project-homepage#readme"
 }
