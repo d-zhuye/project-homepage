@@ -3,13 +3,83 @@
 }
 
 @media screen and (min-width: 320px) {
-  #main {
-    margin: 5px 10px;
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
   }
+
+  #overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1px);
+    z-index: 2;
+  }
+
+  nav {
+    display: flex;
+    gap: 5px;
+  }
+
+  .navbar-container {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .navbar {
+    background-color: orange;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .navbar-visible {
+    animation: expand 0.75s ease-in-out forwards;
+    transform-origin: right;
+    /* display: block; */
+  }
+
+  @keyframes expand {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 60vw;
+    }
+  }
+
+  .navbar-hidden {
+    animation: retract 0.75s ease-in-out;
+    transform-origin: left;
+    /* display: block; */
+  }
+
+  @keyframes retract {
+    0% {
+      width: 60vw;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  li {
+    list-style: none;
+    background-color: orange;
+    padding-left: 10px;
+  }
+
 
   #carousel-center-title {
     text-align: center;
   }
+
   #project-carousel {
     display: flex;
     justify-content: center;
