@@ -1,30 +1,37 @@
 import { portfolio } from "./projects-class";
 
 (function controlAnimations() {
-  const navbarIcon = document.getElementById("navbar-icon");
-  const navbar = document.querySelector(".navbar");
+  const navBarOpenBtn = document.getElementById("navbar-open-btn");
+  const navBarCloseBtn = document.getElementById("navbar-close-btn")
+  const navbarContainer = document.querySelector(".navbar-container");
   const overlay = document.getElementById("overlay");
 
-  navbarIcon.addEventListener("click", () => {
-    navbar.style.display = "block";
-    navbar.classList.toggle("navbar-visible");
-    navbar.classList.toggle("navbar-hidden");
+  navBarOpenBtn.addEventListener("click", () => {
+    navbarContainer.style.display = "block";
+    navbarContainer.classList.toggle("navbar-visible");
+    navbarContainer.classList.toggle("navbar-hidden");
+  });
+
+  navBarCloseBtn.addEventListener("click", () => {
+    navbarContainer.style.display = "block";
+    navbarContainer.classList.toggle("navbar-visible");
+    navbarContainer.classList.toggle("navbar-hidden");
   });
 
   document.getElementById("overlay").addEventListener("click", (e) => {
-    navbar.style.display = "block";
-    navbar.classList.toggle("navbar-visible");
-    navbar.classList.toggle("navbar-hidden");
+    navbarContainer.style.display = "block";
+    navbarContainer.classList.toggle("navbar-visible");
+    navbarContainer.classList.toggle("navbar-hidden");
   });
 
-  navbar.addEventListener("animationstart", (e) => {
+  navbarContainer.addEventListener("animationstart", (e) => {
     if (e.animationName === "expand") overlay.style.display = "block";
   });
 
-  navbar.addEventListener("animationend", (e) => {
+  navbarContainer.addEventListener("animationend", (e) => {
     console.log(e);
     if (e.animationName === "retract") {
-      navbar.style.display = "none";
+      navbarContainer.style.display = "none";
       overlay.style.display = "none";
     }
   });
@@ -54,9 +61,12 @@ const carouselControl = () => {
     rightButton.textContent = portfolio.projects[indexRight].name;
   }
 
-  leftButton.addEventListener("click", changeLeft);
+  [leftButton, carouselLeft].forEach((element) => {
+    element.addEventListener("click", changeLeft)});
 
-  rightButton.addEventListener("click", changeRight);
+  [rightButton,carouselRight].forEach((element) => {
+    element.addEventListener("click", changeRight);
+  })
 
   let touchStartX;
   let touchEndX;
