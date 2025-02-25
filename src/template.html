@@ -8,28 +8,23 @@
   <body>
     <div id="content">
       <header>
-        <div>ICON HERE</div>
-        <nav class="navbar-container">
-          <img
-            id="navbar-icon"
-            width="40"
-            height="40"
-            src="https://img.icons8.com/ios-filled/50/menu--v1.png"
-            alt="menu--v1"
-          />
+        <div>JOHN SMITH</div>
+        <nav class="navbar-container" aria-label="Toggle navigation menu ">
+          <button id="navbar-icon"></button>
           <ul class="navbar navbar-hidden">
-            <li id="about">About</li>
-            <li id="blog">Blog</li>
-            <li id="contact">Contact</li>
+            <li> <a href="">About</a></li>
+            <li> <a href="">Blog</a></li>
+            <li> <a href="">Contact</a></li>
           </ul>
         </nav>
+        <div id="overlay" style="display: none"></div>
       </header>
 
       <section id="hero">
         <div id="hero-img-container">
           <img alt="" />
         </div>
-        <h1>YOUR NAME HERE</h1>
+        <h1>JOHN SMITH</h1>
         <span> <p class="typed-out">web developer</p> </span>
       </section>
 
@@ -52,17 +47,20 @@
           <h1>Subscribe to Newsletter</h1>
           <p>To receive informative blogs, project updates, new releases, and more.</p>
           <form>
-            <label>Email: <input type="email" placeholder="user@email.com"> </label>
+            <label for="email">Email:</label>
+            <div>
+              <input id="email" type="email" placeholder="Email" required>
+              <button type="submit">Join Now</button>  
+            </div>
           </form>
         </section>
 
       </main>
       <aside></aside>
-      <div id="overlay" style="display: none"></div>
     </div>
 
     <footer>
-      <h1>Company Name Here</h1>
+      <h1>JOHN SMITH</h1>
       <div>
         <h2>Services</h2>
         <ul>
