@@ -54,15 +54,44 @@ const carouselControl = () => {
     rightButton.textContent = portfolio.projects[indexRight].name;
   }
 
-  leftButton.addEventListener("click", () => {
+  leftButton.addEventListener("click", changeLeft);
+
+  rightButton.addEventListener("click", changeRight);
+
+  let touchStartX;
+  let touchEndX;
+  const carouselContainer = document.getElementById("project-carousel");
+  carouselContainer.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  })
+
+  carouselContainer.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX > touchEndX) {
+      changeRight();
+    } else {
+      changeLeft();
+    }
+  })
+
+  function changeLeft() {
     index = (index === 0) ? indexEnd : index - 1;
     appendCarousel();
-  });
+  }
 
-  rightButton.addEventListener("click", () => {
+  function changeRight() {
     index = (index === indexEnd) ? 0 : index + 1;
     appendCarousel();
-  });
+  }
+
+
+  (function autoSlideCarousel() {
+    setTimeout(() => {
+      index = (index === indexEnd) ? 0 : index + 1;
+      autoSlideCarousel();
+      appendCarousel();
+    }, 7000);
+  })();
 };
 
 carouselControl();
