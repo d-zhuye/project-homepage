@@ -7,7 +7,7 @@ module.exports = {
     app: "./src/index.js",
   },
   output: {
-    filename: "[name].bundle.js",   // Change filename
+    filename: "project-homepage.bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
